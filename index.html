@@ -12,7 +12,7 @@
     <!-- 在data里面绑定初始数据 keyup键盘事件   v-model.trim='newTodo' 去掉前后空格-->
     <input class="new-todo" placeholder="What needs to be done?" autofocus
     v-model.trim='newTodo'
-    @keyup.enter='addTodo' 
+    @keyup.enter='addTodo'
     >
   </header>
   <!-- This section should be hidden by default and shown when there are todos -->
@@ -56,7 +56,7 @@
         <a href="#/completed">Completed</a>
       </li>
     </ul>
-    <!-- Hidden if no completed items are left ↓ -->
+    <!-- Hidden if no completed items are left ↓   s-->
     <button class="clear-completed" @click="Clear">Clear completed</button>
   </footer>
 </section>
