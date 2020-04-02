@@ -12,7 +12,7 @@
     <!-- 在data里面绑定初始数据 keyup键盘事件   v-model.trim='newTodo' 去掉前后空格-->
     <input class="new-todo" placeholder="What needs to be done?" autofocus
     v-model.trim='newTodo'
-    @keyup.enter='addTodo'
+    @keyup.enter='addTodo' 
     >
   </header>
   <!-- This section should be hidden by default and shown when there are todos -->
@@ -21,7 +21,7 @@
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
     <!-- 渲染数据 用 for-in循环   再动态的绑定选中状态的类 中间 划线  -->
-      <li v-for='(todo,index) in todos'  :class='{completed:todo.completed,editing:todo == editedTodo}'>
+      <li v-for='(todo,index) in filteredTOdos'  :class='{completed:todo.completed,editing:todo == editedTodo}'>
         <div class="view">
             <!-- 选中状态进行实时渲染 checkbox 翻译为复选框 选中的时候 状态为completed:true  -->
           <input class="toggle" type="checkbox" v-model='todo.completed'>
@@ -47,16 +47,17 @@
     <!-- Remove this if you don't implement routing -->
     <ul class="filters">
       <li>
-        <a class="selected" href="#/">All</a>
+          <!-- 类的绑定通过 hashName绑定 进行跳转  -->
+        <a :class="{selected:hashName=='all'}" href="#/">全部</a>
       </li>
       <li>
-        <a href="#/active">Active</a>
+        <a :class="{selected:hashName=='active'}" href="#/active">未完成</a>
       </li>
       <li>
-        <a href="#/completed">Completed</a>
+        <a :class="{selected:hashName=='completed'}" href="#/completed">已完成</a>
       </li>
     </ul>
-    <!-- Hidden if no completed items are left ↓   s-->
+    <!-- Hidden if no completed items are left ↓ -->
     <button class="clear-completed" @click="Clear">Clear completed</button>
   </footer>
 </section>
