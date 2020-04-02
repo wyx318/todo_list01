@@ -51,7 +51,7 @@ let APP = new Vue({
       set(value) {
         //逻辑是 全部选中才会电量
         this.todos.forEach((todo) => {
-          todo.compuleted = value
+          todo.completed = value
         });
       }
     },
