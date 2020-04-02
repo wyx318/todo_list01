@@ -5,7 +5,7 @@ import Vue from 'vue'
 // import App from './App'
 
 
-Vue.config.productionTip = false
+// Vue.config.productionTip = false;
 // 定义过滤器 对 完成状态进行过滤 all Active Completed
 var filters = {
   // 所有的
